@@ -17,7 +17,9 @@ After=multi-user.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/nvidia-smi -lgc 400,3000
+ExecStart=/usr/bin/nvidia-smi -i 0 -pm 1
+ExecStart=/usr/bin/nvidia-smi -lgc 750,2500
+ExecStart=/usr/bin/nvidia-smi --lock-memory-clocks=5001,8501
 RemainAfterExit=yes
 
 [Install]

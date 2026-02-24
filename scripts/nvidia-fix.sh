@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Check if the script is run as root (via sudo)
-if [ "$EUID" -ne 0 ]; then
-  echo "Error: This script must be run as root."
-  echo "Usage: sudo bash $0"
-  exit 1
-fi
-
 echo "Checking for NVIDIA hardware..."
 if ! lspci | grep -qi "nvidia"; then
   echo "Error: No NVIDIA hardware detected."
@@ -24,7 +17,7 @@ echo "nvidia-smi found: $(command -v nvidia-smi)"
 echo "1. Creating systemd service for NVIDIA micro-stutter fix..."
 
 # Write the configuration to the service file
-cat << 'EOF' > /etc/systemd/system/nvidia-min-clock.service
+cat << 'EOF' | sudo tee /etc/systemd/system/nvidia-min-clock.service > /dev/null
 [Unit]
 Description=NVIDIA GPU Minimum Clock Lock (Fix for UI stutter)
 After=multi-user.target

@@ -7,7 +7,7 @@ echo "==> Updating system..."
 sudo pacman -Syu --noconfirm
 
 echo "==> Installing packages from pacman..."
-sudo pacman -S --noconfirm \
+sudo pacman -S --noconfirm --needed \
 	alacritty \
 	btop \
 	chromium \
@@ -16,6 +16,7 @@ sudo pacman -S --noconfirm \
 	flatpak \
 	fuse2 \
 	nvtop \
+	mise \
 	opencode \
 	starship \
 	stow \
@@ -39,6 +40,6 @@ if ! command -v paru &>/dev/null; then
 fi
 
 echo "==> Installing packages from AUR..."
-paru -S --noconfirm \
+paru -S --noconfirm --needed \
     microsoft-edge-stable-bin \
     visual-studio-code-bin

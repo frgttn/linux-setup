@@ -94,7 +94,7 @@ config/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/frgttn/linux.git
+git clone https://github.com/frgttn/linux-setup.git
 cd ./linux-setup
 
 # 2. Make the installer executable (if not already)

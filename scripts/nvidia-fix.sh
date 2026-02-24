@@ -7,6 +7,20 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
+echo "Checking for NVIDIA hardware..."
+if ! lspci | grep -qi "nvidia"; then
+  echo "Error: No NVIDIA hardware detected."
+  exit 1
+fi
+echo "NVIDIA hardware found."
+
+echo "Checking for nvidia-smi utility..."
+if ! command -v nvidia-smi &>/dev/null; then
+  echo "Error: nvidia-smi not found. Please install the NVIDIA drivers first."
+  exit 1
+fi
+echo "nvidia-smi found: $(command -v nvidia-smi)"
+
 echo "1. Creating systemd service for NVIDIA micro-stutter fix..."
 
 # Write the configuration to the service file
@@ -17,7 +31,8 @@ After=multi-user.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/nvidia-smi -lgc 400,3000
+ExecStart=/usr/bin/nvidia-smi -lgc 1770,2505
+ExecStart=/usr/bin/nvidia-smi --lock-memory-clocks=8501,8501
 RemainAfterExit=yes
 
 [Install]

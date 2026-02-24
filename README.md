@@ -94,8 +94,8 @@ config/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/linux.git ~/Projects/linux
-cd ~/Projects/linux
+git clone https://github.com/frgttn/linux.git
+cd ./linux-setup
 
 # 2. Make the installer executable (if not already)
 chmod +x install.sh

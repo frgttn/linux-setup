@@ -11,12 +11,13 @@ Running `install.sh` performs the following steps in order:
 | Step | Description                                                    |
 | ---- | -------------------------------------------------------------- |
 | 1    | Install packages via **pacman** and **AUR (paru)**             |
-| 2    | Install apps via **Flatpak** (Flathub)                         |
-| 3    | Run extra scripts (`nvidia-fix.sh`, `install_mongodb_compass`) |
-| 4    | Copy the `Wallpapers/` folder to `~/Pictures/`                 |
-| 5    | Copy `fonts/` to `~/.local/share/fonts` and refresh font cache |
-| 6    | Install **pnpm** (via install script)                          |
-| 7    | Apply dotfiles with **GNU Stow** (`config/` → `~/.config/`)    |
+| 2    | Set **Fish** as the default shell                              |
+| 3    | Install apps via **Flatpak** (Flathub)                         |
+| 4    | Run extra scripts (`nvidia-fix.sh`, `install_mongodb_compass`) |
+| 5    | Copy the `Wallpapers/` folder to `~/Pictures/`                 |
+| 6    | Copy `fonts/` to `~/.local/share/fonts` and refresh font cache |
+| 7    | Install **pnpm** (via install script)                          |
+| 8    | Apply dotfiles with **GNU Stow** (`config/` → `~/.config/`)    |
 
 ---
 

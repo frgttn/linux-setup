@@ -14,7 +14,9 @@ Running `install.sh` performs the following steps in order:
 | 2    | Install apps via **Flatpak** (Flathub)                         |
 | 3    | Run extra scripts (`nvidia-fix.sh`, `install_mongodb_compass`) |
 | 4    | Copy the `Wallpapers/` folder to `~/Pictures/`                 |
-| 5    | Apply dotfiles with **GNU Stow** (`config/` → `~/.config/`)    |
+| 5    | Copy `fonts/` to `~/.local/share/fonts` and refresh font cache |
+| 6    | Install **pnpm** (via install script)                          |
+| 7    | Apply dotfiles with **GNU Stow** (`config/` → `~/.config/`)    |
 
 ---
 
@@ -32,6 +34,7 @@ Running `install.sh` performs the following steps in order:
 | `flatpak`            | Flatpak runtime                                 |
 | `fuse2`              | Filesystem in Userspace (required by some apps) |
 | `nvtop`              | GPU process monitor                             |
+| `mise`               | Polyglot tool version manager                   |
 | `opencode`           | AI coding agent for the terminal                |
 | `starship`           | Cross-shell prompt                              |
 | `stow`               | GNU Stow dotfile manager                        |
@@ -65,6 +68,29 @@ Running `install.sh` performs the following steps in order:
 | qBittorrent   | `org.qbittorrent.qBittorrent`    |
 | RedisInsight  | `com.redis.RedisInsight`         |
 | Zen Browser   | `app.zen_browser.zen`            |
+
+### KDE Themes
+
+| Theme                   | Source                          |
+| ----------------------- | ------------------------------- |
+| Breeze Catppuccin Light | https://store.kde.org/p/2320902 |
+
+---
+
+## Fonts
+
+Nerd Font families bundled in `fonts/` and installed to `~/.local/share/fonts`:
+
+| Family                   | Format |
+| ------------------------ | ------ |
+| FiraCode Nerd Font       | `.ttf` |
+| Fira Mono Nerd Font      | `.otf` |
+| Geist Mono Nerd Font     | `.otf` |
+| Iosevka Nerd Font        | `.ttf` |
+| JetBrains Mono           | `.ttf` |
+| JetBrains Mono NL        | `.ttf` |
+| JetBrains Mono Nerd Font | `.ttf` |
+| Zed Mono Nerd Font       | `.ttf` |
 
 ---
 

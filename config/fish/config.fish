@@ -4,7 +4,7 @@ end
 
 starship init fish | source
 
-~/.local/bin/mise activate fish | source
+/usr/bin/mise activate fish | source
 
 # pnpm
 set -gx PNPM_HOME "~/.local/share/pnpm"
